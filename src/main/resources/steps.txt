@@ -1,0 +1,20 @@
+// Step 1: Set Chrome web driver property along with chromedriver.exe path
+System.setProperty("webdriver.chrome.driver", "C:\Users\Makhan AutomationHub\Desktop\chrome_webdriver\chromedriver.exe");
+
+// Step 2: Create an object of WebDriver(Interface) using ChromeDriver class
+WebDriver driver = new ChromeDriver();
+
+// Step 3: Launch the web url
+driver.get("");
+
+// Step 4: Maximize the browser
+driver.manage().window().maximize();
+
+// Step 5: Provide some hard wait
+Thread.sleep(5000);
+
+url1:
+https://demoqa.com/upload-download
+
+url2:
+https://testautomationpractice.blogspot.com/
