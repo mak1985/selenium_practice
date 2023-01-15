@@ -7,53 +7,33 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
 
 public class JavaScriptExecutorDemo {
+
     public static void main(String[] args) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
 
         WebDriver driver = new ChromeDriver();
-        driver.get("http://uitestpractice.com/Students/Index");
+        //driver.get("https://testautomationpractice.blogspot.com/");
+        driver.get("https://demo.guru99.com/test/guru99home/scrolling.html");
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
 
-        //Click action using JavaScriptExecutor
-        JavascriptExecutor js=(JavascriptExecutor) driver;
-//        WebElement element= driver.findElement(By.xpath("//button/a[text()='Create New']"));
-//        	js.executeScript("arguments[0].click();", element);
-
-        // Refresh the browser window/page
-//        js.executeScript("history.go(0)");
-
-        //get domain name
-//        String domain = js.executeScript("return document.domain;").toString();
-//        System.out.println(domain);
-
-        //get title name
-//        String title = js.executeScript("return document.title").toString();
-//        System.out.println(title);
-
-        //get url name
-//        String url = js.executeScript("return document.URL;").toString();
-//        System.out.println(url);
-
-        // draw border arround web element
-//        WebElement element= driver.findElement(By.xpath("//input[@value='Find']"));
-//        js.executeScript("arguments[0].style.border = '3px solid red';", element);
-
-        //Zoom web page
-//        js.executeScript("document.body.style.zoom='50%'");
-
-        //Retrun height and width of web page
-//        System.out.println(js.executeScript("return window.innerHeight;").toString());
-//        System.out.println(js.executeScript("return window.innerWidth;").toString());
-
-        //How to scroll down to the end of page - vertically
-//        js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+//        js.executeScript("Script, Arguments");
 //
-//        Thread.sleep(10);
-//        //How to scroll up to the end of page - vertically
-//        js.executeScript("window.scrollBy(0,-document.body.scrollHeight)");
+//        Thread.sleep(2000);
+//        // 1 Scroll down to web page by pixel 500
+//        js.executeScript("window.scrollBy(0,1500)");
+//        Thread.sleep(2000);
+//        //scroll down the web page by the visibility of the element
+//        WebElement ele = driver.findElement(By.xpath("//input[@type='submit'][@value='Submit']"));
+////        js.executeScript("arguments[0].scrollIntoView();", ele);
+//        js.executeScript("arguments[0].scrollIntoView();", ele);
 
-        //Navigate to different url
-        js.executeScript("window.location='https://www.google.co.in/'");
+
+        //scroll Horizontal
+        WebElement ele1 = driver.findElement(By.linkText("VBScript"));
+        js.executeScript("arguments[0].scrollIntoView();", ele1);
+
+
     }
 }
